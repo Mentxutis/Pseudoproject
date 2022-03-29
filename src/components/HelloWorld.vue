@@ -31,6 +31,7 @@ export default {
   background-color: black;
   color: blanchedalmond;
   padding: 10%;
+  margin-top: 3%;
 }
 .form {
   padding: 0%;

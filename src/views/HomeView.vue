@@ -2,7 +2,7 @@
   <div class="home">
     <router-link to="/NewUser">New User</router-link>
     <p></p>
-    <h2>HOME...Welcome to Your Todo List.</h2>
+    <h2>Welcome to Your Todo List.</h2>
     <p></p>
     <form action="submit">
       <label for="text">User</label>

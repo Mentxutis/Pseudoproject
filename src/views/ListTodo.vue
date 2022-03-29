@@ -44,8 +44,8 @@
               @keyup.enter="doneEdit(todo)"
             />
           </div>
-          <div class="removeItem" @click="removeTodo(index)">
-            Delete Item:&times;
+          <div class="removeItem text-danger" @click="removeTodo(index)">
+            Delete:&times;
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@ export default {
   height: 900 px;
   padding: 50px;
   color: blanchedalmond;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .extraContainer {
   display: flex;

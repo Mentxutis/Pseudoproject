@@ -9,7 +9,7 @@
         <input
           type="text"
           placeholder="user name"
-          v-model="name"
+          v-model="username"
           required
           id="name"
         />
@@ -18,7 +18,7 @@
         <br />
         <input type="e-mail" placeholder="e-mail" v-model="email" required />
         <p></p>
-        <label for="">Password {{ password }}</label>
+        <label for="">Password </label>
         <br />
         <input
           type="password"
@@ -26,10 +26,27 @@
           v-model="password"
           required
         />
+        <br />
+        <label for="">Repeat Password </label>
+        <br />
+        <input
+          type="password"
+          placeholder="repeat password"
+          v-model="password"
+          required
+        />
 
         <p></p>
-        <button class="btn btn-primary" type="submit">Save LOGIN</button>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          @click="addUser()"
+          v-show="password === repeatPassword"
+        >
+          Save LOGIN
+        </button>
         <p></p>
+        <br />
         <router-link to="/">Home</router-link>
 
         <p></p>
@@ -46,7 +63,7 @@ export default {
   data() {
     return {
       newUser: "",
-      idForUser: "",
+      idUser: "",
       User: [
         {
           idUser: "1",
@@ -60,9 +77,15 @@ export default {
 
   methods: {
     addUser() {
-      this.user.push({
+      const User = {
+        userName: this.userName,
+        email: this.email,
+        password: this.password,
+        idUSer: this.idUser,
+      };
+      this.userName.push({
         id: this.idUser,
-        user: this.userName,
+        userName: this.userName,
         email: this.email,
         password: this.password,
       });
@@ -80,6 +103,7 @@ export default {
   background-color: black;
   color: azure;
   padding: 5%;
+  margin-top: 3%;
 }
 .form {
   margin-top: 10%;
